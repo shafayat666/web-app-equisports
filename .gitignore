@@ -1,0 +1,12 @@
+# .gitignore (root or client/.gitignore)
+node_modules/
+dist/
+.env
+.env.local
+.vscode/
+.DS_Store
+*.log
+
+# Vite-specific
+.vite/
+client/.vite/
