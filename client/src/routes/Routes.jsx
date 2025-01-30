@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Root from "../layout/Root";
 import Home from "../pages/Home";
 import AddEquip from "../pages/AddEquip";
-import AllEquip from "../pages/AllEquip";
+import ViewEquip from "../pages/ViewEquip";
 import Login from "../pages/Login";
 import UserEquip from "../pages/UserEquip";
 
@@ -21,8 +21,8 @@ export const router = createBrowserRouter([
         element: <AddEquip />,
       },
       {
-        path: "/all-equips",
-        element: <AllEquip />,
+        path: "/view-equip",
+        element: <ViewEquip />,
       },
       {
         path: "/login",
