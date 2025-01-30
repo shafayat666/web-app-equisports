@@ -5,6 +5,7 @@ import AddEquip from "../pages/AddEquip";
 import ViewEquip from "../pages/ViewEquip";
 import Login from "../pages/Login";
 import UserEquip from "../pages/UserEquip";
+import Register from "../pages/Register";
 
 export const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ export const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login />,
+      },
+      {
+        path: "/register",
+        element: <Register />,
       },
       {
         path: "/user-equips",
