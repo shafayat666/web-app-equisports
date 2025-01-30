@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const EquipCard = ({ sport }) => {
-  const {_id, name, image, category, price, description, stock} = sport;
+  const {_id, name, image, price, description, stock} = sport;
   // console.log(sport);
   return (
     <div className="card bg-base-100 w-96 shadow-sm">
@@ -19,7 +19,6 @@ const EquipCard = ({ sport }) => {
 
         <div className="card-actions justify-start">
           <Link to={`/view-equip/${_id}`} className="btn btn-primary">View</Link>
-          <Link to={`#`} className="btn btn-secondary">Add</Link>
         </div>
       </div>
     </div>
