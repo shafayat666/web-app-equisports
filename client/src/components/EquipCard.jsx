@@ -17,10 +17,9 @@ const EquipCard = ({ sport }) => {
         <p>Price: ${price}</p>
         <p>Stock: {stock}</p>
 
-        <div className="card-actions justify-center">
-          <Link to={"/view-equip"} className="btn btn-primary">View</Link>
-          <Link to={`/updateEquip/${_id}`} className="btn btn-secondary">Edit</Link>
-
+        <div className="card-actions justify-start">
+          <Link to={`/view-equip/${_id}`} className="btn btn-primary">View</Link>
+          <Link to={`#`} className="btn btn-secondary">Add</Link>
         </div>
       </div>
     </div>

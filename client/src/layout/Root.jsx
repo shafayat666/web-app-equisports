@@ -1,16 +1,26 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLoaderData } from "react-router-dom";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
+import { createContext, useState } from "react";
+
+export const DataContext = createContext(null);
 
 const Root = () => {
+  const loaderData = useLoaderData();
+
+  const [data, setData] = useState(loaderData);
+
   return (
-    <div className="flex flex-col min-h-screen">
-      <NavBar />
-      <main className="flex-grow p-8">
-        <Outlet />
-      </main>
-      <Footer />
-    </div>
+    <DataContext.Provider value={{ data, setData }}>
+      <div className="flex flex-col min-h-screen">
+        <NavBar />
+        <main className="flex-grow p-8">
+          <Outlet />
+        </main>
+        <Footer />
+      </div>
+    </DataContext.Provider>
+
   );
 };
 

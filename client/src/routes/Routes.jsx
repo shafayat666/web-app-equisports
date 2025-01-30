@@ -10,18 +10,18 @@ export const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
+    loader: () => fetch("http://localhost:5000/sports"),
     children: [
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch("http://localhost:5000/sports"),
       },
       {
         path: "/add-equips",
         element: <AddEquip />,
       },
       {
-        path: "/view-equip",
+        path: "/view-equip/:id",
         element: <ViewEquip />,
       },
       {
