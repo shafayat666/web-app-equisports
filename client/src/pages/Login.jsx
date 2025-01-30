@@ -1,23 +1,36 @@
 import { Link } from "react-router-dom";
 
 const Login = () => {
+
+  const handleLogin = (event) => {
+    event.preventDefault();
+
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(email, password);
+    
+  }
+
   return (
-    <div className="hero bg-base-200 min-h-screen">
+    <div className="hero">
       <div className="hero-content flex-col">
         <div className="text-center">
           <h1 className="text-5xl font-bold">Login now!</h1>
         </div>
-        <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-          <div className="card-body">
+        <div className="card bg-base-100 w-full max-w-lg shrink-0 shadow-2xl p-8">
+          <form onSubmit={handleLogin} className="card-body space-y-4">
             <fieldset className="fieldset">
               <label className="fieldset-label">Email</label>
-              <input type="email" className="input" placeholder="Email" />
+              <input name="email" type="email" className="input input-lg" placeholder="Email" />
               <label className="fieldset-label">Password</label>
-              <input type="password" className="input" placeholder="Password" />
-              <div>New here? Please<Link className="link link-hover" to={"/register"}> Register</Link></div>
-              <button className="btn btn-neutral mt-4">Login</button>
+              <input name="password" type="password" className="input input-lg" placeholder="Password" />
+              <div className="mt-2">
+                New here? Please <Link className="link link-hover" to={"/register"}>Register</Link>
+              </div>
+              <button className="btn btn-neutral btn-lg mt-4 w-full">Login</button>
             </fieldset>
-          </div>
+          </form>
         </div>
       </div>
     </div>
