@@ -1,21 +1,32 @@
+import PropTypes from 'prop-types';
 
-const EquipCard = () => {
+const EquipCard = ({ sport }) => {
+  const {_id, name, image, category, price, description, stock} = sport;
+  // console.log(sport);
   return (
     <div className="card bg-base-100 w-96 shadow-sm">
       <figure>
         <img
-          src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+          src={image}
           alt="Shoes" />
       </figure>
       <div className="card-body">
-        <h2 className="card-title">Card Title</h2>
-        <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+        <h2 className="card-title">{name}</h2>
+        <p>{description}</p>
+        <p>Price: ${price}</p>
+        <p>Stock: {stock}</p>
+
         <div className="card-actions justify-end">
           <button className="btn btn-primary">Buy Now</button>
         </div>
       </div>
     </div>
   );
+};
+
+
+EquipCard.propTypes = {
+  sport: PropTypes.object,
 };
 
 export default EquipCard;
