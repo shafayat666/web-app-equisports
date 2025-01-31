@@ -21,7 +21,24 @@ const Register = () => {
         console.log(userCredential.user);
         const userInfo = userCredential.user;
         updateProfile(userInfo, { displayName: name })
-        navigate("/login");
+
+        const newUser = { name, email };
+
+        fetch(`http://localhost:5000/users`, {
+          method: "POST",
+          headers: {
+            "content-type": "application/json"
+          },
+          body: JSON.stringify(newUser),
+        })
+          .then(res => res.json())
+          .then(data => {
+            console.log(data);
+            if (data.insertedId) {
+              alert("User created successfully!");
+            }
+          });
+        navigate("/");
       })
       .catch(error => {
         console.log(error);
