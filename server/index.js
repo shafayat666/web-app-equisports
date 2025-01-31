@@ -37,9 +37,17 @@ async function run() {
     const sportsCollection = database.collection('equipments');
     const userCollection = database.collection("users");
 
+    // equipment api
     app.get('/sports', async (req, res) => {
       const cursor = sportsCollection.find();
       const result = await cursor.toArray();
+      res.send(result);
+    });
+
+    // user api
+    app.post('/users', async (req, res) => {
+      const newUser = req.body;
+      const result = await userCollection.insertOne(newUser);
       res.send(result);
     });
 
